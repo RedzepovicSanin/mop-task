@@ -1,2 +1,8 @@
-<p>homepage works!</p>
-<button></button>
+<div class="homepage">
+  <h3>Questions</h3>
+  <div *ngFor="let question of questions" class="homepage-questions">
+    <p>{{question.message}}</p>
+    <p>Userid: {{question.userId}}</p>
+    <a routerLink="/question/{{question.id}}">Id: {{question.id}}</a>
+  </div>
+</div>

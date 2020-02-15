@@ -16,13 +16,13 @@
 
     <div class="register-page-input">
       <label>Lastname:</label>
-      <input id="lastName" name="lastName" class="form-control" type="text" formControlName="lastName" required>
+      <input id="lastname" name="lastname" class="form-control" type="text" formControlName="lastname" required>
 
-      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger register-page-input-close">
-        <div *ngIf="lastName.errors.required">
+      <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger register-page-input-close">
+        <div *ngIf="lastname.errors.required">
           Lastname is required.
         </div>
-        <div class="register-page-input-close-button" (click)="closeValidationInfo(lastName)">X</div>
+        <div class="register-page-input-close-button" (click)="closeValidationInfo(lastname)">X</div>
       </div>
     </div>
 

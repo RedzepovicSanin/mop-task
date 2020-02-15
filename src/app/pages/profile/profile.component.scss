@@ -1,0 +1,25 @@
+.profile {
+  margin-top: 40px;
+  width: 20%;
+  .profile-form {
+    margin: 20px;
+    .profile-input {
+      width: 100%;
+      .profile-input-close {
+        display: flex;
+        justify-content: space-between;
+        .profile-input-close-button {
+          cursor: pointer;
+        }
+      }
+    }
+    .profile-buttons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,1 +1,71 @@
-<p>profile works!</p>
+<div class="profile">
+  <form class="form profile-form" [formGroup]="profileForm" (ngSubmit)="update()">
+
+    <div class="profile-input">
+      <label>Name:</label>
+      <input id="name" name="name" class="form-control" type="text" formControlName="name" required>
+  
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger profile-input-close">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div class="profile-input-close-button" (click)="closeValidationInfo(name)">X</div>
+      </div>
+    </div>
+  
+    <div class="profile-input">
+      <label>Lastname:</label>
+      <input id="lastname" name="lastname" class="form-control" type="text" formControlName="lastname" required>
+  
+      <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger profile-input-close">
+        <div *ngIf="lastname.errors.required">
+          Lastname is required.
+        </div>
+        <div class="profile-input-close-button" (click)="closeValidationInfo(lastname)">X</div>
+      </div>
+    </div>
+  
+    <div class="profile-input">
+      <label>Email:</label>
+      <input id="email" name="email" class="form-control" type="email" formControlName="email" [email]="true" required>
+  
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger profile-input-close">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="email.errors.email">
+          Enter valid email address.
+        </div>
+        <div class="profile-input-close-button" (click)="closeValidationInfo(email)">X</div>
+      </div>
+    </div>
+  
+    <div class="profile-buttons">
+      <button class="btn btn-dark update-button" type="submit" [disabled]="!profileForm.valid">Update</button>
+    </div>
+  
+  </form>
+
+  <form class="form profile-form" [formGroup]="profilePasswordForm" (ngSubmit)="updatePassword()">
+
+    <div class="profile-input">
+      <label>Old password:</label>
+      <input id="oldPassword" name="oldPassword" class="form-control" type="password" formControlName="oldPassword" required>
+    </div>
+  
+    <div class="profile-input">
+      <label>New password:</label>
+      <input id="newPassword" name="newPassword" class="form-control" type="password" formControlName="newPassword" required>
+    </div>
+  
+    <div class="profile-input">
+      <label>Repeat new password:</label>
+      <input id="repeatNewPassword" name="repeatNewPassword" class="form-control" type="password" formControlName="repeatNewPassword" required>
+    </div>
+  
+    <div class="profile-buttons">
+      <button class="btn btn-dark update-button" type="submit" [disabled]="!profilePasswordForm.valid">Update Password</button>
+    </div>
+  
+  </form>
+</div>

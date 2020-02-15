@@ -10,7 +10,9 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { Page404Component } from './page404/page404.component';
-import { UserService } from './services/user.service';
+
+import { UserService } from './shared/services/user.service';
+import { AuthService } from './shared/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { UserService } from './services/user.service';
     AppRoutingModule
   ],
   providers: [
-    UserService
+    UserService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

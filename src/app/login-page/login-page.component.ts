@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, ControlContainer, AbstractControl } from '@angular/forms';
-import { UserService } from '../services/user.service';
+import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { UserService } from '../shared/services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../shared/models/user';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -14,8 +15,8 @@ export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   loginFailed: boolean;
 
-  constructor(private userService: UserService, private router: Router,
-              private toastrService: ToastrService) { }
+  constructor(private userService: UserService, private authService: AuthService,
+              private router: Router, private toastrService: ToastrService) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -30,12 +31,17 @@ export class LoginPageComponent implements OnInit {
     const userForLogin = new User;
     userForLogin.email = this.email.value;
     userForLogin.password = btoa(this.password.value);
-    this.userService.Login(userForLogin).subscribe((response: User[]) => {
+    this.userService.GetUser(userForLogin).subscribe((response: User[]) => {
       const returnedUser = response[0];
-      if (userForLogin.password === returnedUser.password) {
-        this.router.navigate(['/homepage']);
-      } else {
+      if (returnedUser === undefined) {
         this.loginFailed = true;
+      } else {
+        if ((returnedUser.email === userForLogin.email) && (userForLogin.password === returnedUser.password)) {
+          this.authService.insertUserToStorage(returnedUser);
+          this.router.navigate(['pages']);
+        } else {
+          this.loginFailed = true;
+        }
       }
     }, () => {
       this.toastrService.error('Something bad happened!','Error');
