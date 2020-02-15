@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "name": "Sanin",
+      "lastname": "Redzepovic",
+      "email": "sanin.redzepovic@mop.com",
+      "password": "c2FuaW4xMjM=",
+      "id": 1
+    },
+    {
+      "name": "Alen",
+      "lastname": "Ausic",
+      "email": "alen.ausic@mop.ba",
+      "password": "YWxlbjEyMw==",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Lamija",
+      "lastname": "Haracic",
+      "email": "lamija.haracic@mop.com",
+      "password": "bGFtaWphOTk4"
+    },
+    {
+      "name": "Ajla",
+      "lastName": "Redzepovic",
+      "email": "ajla.redzepovic@gmail.com",
+      "password": "YWpsYTEyMw==",
+      "id": 4
+    },
+    {
+      "name": "Belma",
+      "lastName": "Redzepovic",
+      "email": "belma.redzepovic@gmail.com",
+      "password": "YmVsbWExMjM=",
+      "id": 5
+    },
+    {
+      "name": "Hamo",
+      "lastName": "Hamic",
+      "email": "hamo.hamicgmail.com",
+      "password": "aGFtbzk5OQ==",
+      "id": 6
+    },
+    {
+      "name": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "id": 7
+    }
+  ]
+}

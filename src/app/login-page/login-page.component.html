@@ -1,0 +1,40 @@
+<div class="login-page">
+  <h3>LOGIN PAGE</h3>
+  <form class="form login-page-form" [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <div class="login-page-input">
+      <label>Email:</label>
+      <input id="email" name="email" class="form-control" type="email" formControlName="email" required>
+
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger login-page-input-close">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+        <div class="login-page-input-close-button" (click)="closeValidationInfo(email)">X</div>
+      </div>
+    </div>
+
+    <div class="login-page-input">
+      <label>Password:</label>
+      <input id="password" name="password" class="form-control" type="password" formControlName="password" required>
+
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger login-page-input-close">
+        <div *ngIf="password.errors.required">
+          Password is required.
+        </div>
+        <div class="login-page-input-close-button" (click)="closeValidationInfo(password)">X</div>
+      </div>
+    </div>
+
+    <div class="login-page-buttons">
+      <button class="btn btn-dark" type="submit" [disabled]="!loginForm.valid">Login</button>
+      <button class="btn btn-dark" type="button" [routerLink]="['/register']">Register</button>
+    </div>
+
+  </form>
+
+  <div *ngIf="loginFailed" class="alert alert-danger">
+    Email or password invalid!
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+.register-page {
+  margin: 150px auto;
+  width: 20%;
+  .register-page-form {
+    margin-top: 10px;
+    .register-page-input {
+      width: 100%;
+      .register-page-input-close {
+        display: flex;
+        justify-content: space-between;
+        .register-page-input-close-button {
+          cursor: pointer;
+        }
+      }
+    }
+    .register-page-buttons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
