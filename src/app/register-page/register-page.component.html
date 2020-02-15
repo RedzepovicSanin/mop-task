@@ -1,0 +1,67 @@
+<div class="register-page">
+  <h3>REGISTER PAGE</h3>
+  <form class="form register-page-form" [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <div class="register-page-input">
+      <label>Name:</label>
+      <input id="name" name="name" class="form-control" type="text" formControlName="name" required>
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger register-page-input-close">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div class="register-page-input-close-button" (click)="closeValidationInfo(name)">X</div>
+      </div>
+    </div>
+
+    <div class="register-page-input">
+      <label>Lastname:</label>
+      <input id="lastName" name="lastName" class="form-control" type="text" formControlName="lastName" required>
+
+      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger register-page-input-close">
+        <div *ngIf="lastName.errors.required">
+          Lastname is required.
+        </div>
+        <div class="register-page-input-close-button" (click)="closeValidationInfo(lastName)">X</div>
+      </div>
+    </div>
+
+    <div class="register-page-input">
+      <label>Email:</label>
+      <input id="email" name="email" class="form-control" type="email" formControlName="email" [email]="true" required>
+
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger register-page-input-close">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="email.errors.email">
+          Enter valid email address.
+        </div>
+        <div class="register-page-input-close-button" (click)="closeValidationInfo(email)">X</div>
+      </div>
+    </div>
+
+    <div class="register-page-input">
+      <label>Password:</label>
+      <input id="password" name="password" class="form-control" type="password" formControlName="password" required>
+
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger register-page-input-close">
+        <div *ngIf="password.errors.required">
+          Password is required.
+        </div>
+        <div class="register-page-input-close-button" (click)="closeValidationInfo(password)">X</div>
+      </div>
+    </div>
+
+    <div class="register-page-buttons">
+      <button class="btn btn-dark" type="submit" [disabled]="!registerForm.valid">Register</button>
+      <button class="btn btn-dark" type="button" [routerLink]="['/login']">Back to Login</button>
+    </div>
+
+  </form>
+
+  <div *ngIf="registerFailed">
+    Email or password invalid!
+  </div>
+
+</div>

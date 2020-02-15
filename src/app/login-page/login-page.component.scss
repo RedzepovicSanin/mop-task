@@ -1,0 +1,22 @@
+.login-page {
+  margin: 150px auto;
+  width: 20%;
+  .login-page-form {
+    margin-top: 10px;
+    .login-page-input {
+      width: 100%;
+      .login-page-input-close {
+        display: flex;
+        justify-content: space-between;
+        .login-page-input-close-button {
+          cursor: pointer;
+        }
+      }
+    }
+    .login-page-buttons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
