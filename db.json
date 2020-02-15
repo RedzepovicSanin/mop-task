@@ -4,12 +4,12 @@
       "name": "Sanin",
       "lastname": "Redzepovic",
       "email": "sanin.redzepovic@mop.com",
-      "password": "c2FuaW4xMjM=",
+      "password": "c2FuaW4xMjM0",
       "id": 1
     },
     {
       "name": "Alen",
-      "lastname": "Ausic",
+      "lastname": "Ausica",
       "email": "alen.ausic@mop.ba",
       "password": "YWxlbjEyMw==",
       "id": 2
@@ -23,31 +23,72 @@
     },
     {
       "name": "Ajla",
-      "lastName": "Redzepovic",
+      "lastname": "Redzepovic",
       "email": "ajla.redzepovic@gmail.com",
       "password": "YWpsYTEyMw==",
       "id": 4
     },
     {
       "name": "Belma",
-      "lastName": "Redzepovic",
+      "lastname": "Redzepovic",
       "email": "belma.redzepovic@gmail.com",
       "password": "YmVsbWExMjM=",
       "id": 5
     },
     {
       "name": "Hamo",
-      "lastName": "Hamic",
+      "lastname": "Hamic",
       "email": "hamo.hamicgmail.com",
       "password": "aGFtbzk5OQ==",
       "id": 6
+    }
+  ],
+  "questions": [
+    {
+      "message": "Are we alone in the universe?",
+      "userId": 1,
+      "id": 1
     },
     {
-      "name": "",
-      "lastName": "",
-      "email": "",
-      "password": "",
-      "id": 7
+      "message": "Are we happy?",
+      "userId": 1,
+      "id": 2
+    }
+  ],
+  "ratings": [
+    {
+      "rating": 5,
+      "questionId": 1,
+      "userId": 1
+    },
+    {
+      "rating": 4,
+      "questionId": 1,
+      "userId": 1
+    }
+  ],
+  "likes": [
+    {
+      "like": true,
+      "questionId": 1,
+      "userId": 1
+    },
+    {
+      "like": false,
+      "questionId": 2,
+      "userId": 1
+    }
+  ],
+  "answers": [
+    {
+      "answer": "No we are not!",
+      "questionId": 1,
+      "userId": 1
+    },
+    {
+      "answer": "Yes we are!",
+      "questionId": 1,
+      "userId": 2
     }
   ]
 }

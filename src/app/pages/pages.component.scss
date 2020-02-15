@@ -1,0 +1,10 @@
+.pages {
+  display: flex;
+  justify-content: space-between;
+  .pages-nav {
+    p {
+      display: inline;
+      margin-right: 10px;
+    }
+  }
+}
