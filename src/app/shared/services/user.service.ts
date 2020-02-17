@@ -12,8 +12,13 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) { }
 
   // login user method
-  GetUser(user: User) {
+  CheckUser(user: User) {
     return this.http.get(environment.baseAddress + 'users?email=' + user.email);
+  }
+
+  // get user method
+  GetUser(userId) {
+    return this.http.get(environment.baseAddress + 'users/' + userId);
   }
 
   // register user method

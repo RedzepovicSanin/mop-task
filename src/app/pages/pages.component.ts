@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { User } from '../shared/models/user';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
@@ -8,13 +8,13 @@ import { AuthService } from '../shared/services/auth.service';
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss']
 })
-export class PagesComponent implements OnInit {
+export class PagesComponent implements  OnInit {
   currentUser: User;
 
   constructor(private router: Router, private authService: AuthService) {  }
 
   ngOnInit() {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   logout() {

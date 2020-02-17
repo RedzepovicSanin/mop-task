@@ -10,8 +10,15 @@ export class QuestionService {
 
   constructor(private http: HttpClient) { }
 
-  // login user method
-  GetQuestions() {
-    return this.http.get(environment.baseAddress + 'questions?_sort=id&_order=desc');
+  // questions
+  GetQuestions(page) {
+    return this.http.get(environment.baseAddress + 
+      'questions?_embed=answers&_embed=questionInfo&_sort=id&_order=desc&_page=' + page + '&_limit=20' );
+  }
+
+  // questions for specific user
+  GetUserQuestions(userId, page) {
+    return this.http.get(environment.baseAddress + 'questions?userId=' + userId + 
+      '&_embed=answers&_embed=questionInfo&_sort=id&_order=desc&_page=' + page + '&_limit=20');
   }
 }

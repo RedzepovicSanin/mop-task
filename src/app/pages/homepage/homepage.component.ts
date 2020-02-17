@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionService } from 'src/app/shared/services/question.service';
 import { Question } from 'src/app/shared/models/question';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/shared/models/user';
+import { BehaviorSubject } from 'rxjs';
+import { UserService } from 'src/app/shared/services/user.service';
+import { QuestionTypes } from 'src/app/shared/enums/question-types';
 
 @Component({
   selector: 'app-homepage',
@@ -9,17 +13,43 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  questions: Question[];
+  user: User;
+  page = 1;
+  private questionsSubject = new BehaviorSubject<Question[]>([]);
+  questionsObservable = this.questionsSubject.asObservable();
+  questions: Question[] = [];
+  questionTypes = QuestionTypes;
 
-  constructor(private questionService: QuestionService, private toastrService: ToastrService) { }
+  constructor(private questionService: QuestionService, private userService: UserService,
+              private toastrService: ToastrService) { }
 
-  ngOnInit(): void {
-    this.questionService.GetQuestions().subscribe((response: Question[]) => {
+  ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
+    this.questionService.GetQuestions(this.page).subscribe((response: Question[]) => {
       this.questions = response;
+      this.questionsSubject.next(this.questions);
     }, () => {
-      this.toastrService.error('Something went wrong!', 'Error');
+      this.toastrService.error('Something bad happened!', 'Error');
     });
   }
 
+  // load more questions
+  loadMore() {
+    this.page += this.page;
+    this.questionService.GetQuestions(this.page).subscribe((response: Question[]) => {
+      this.questions = this.questions.concat(response);
+      this.questionsSubject.next(this.questions);
+    }, () => {
+      this.toastrService.error('Something bad happened!', 'Error');
+    });
+  }
 
+  getQuestions(event) {
+    debugger;
+    const a = 5;
+  }
+
+  getLatestQuestions() {}
+  getMostViewedQuestions() {}
+  getHotQuestions() {}
 }
