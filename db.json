@@ -9,7 +9,7 @@
     },
     {
       "name": "Alen",
-      "lastname": "Ausica",
+      "lastname": "Ausic",
       "email": "alen.ausic@mop.ba",
       "password": "YWxlbjEyMw==",
       "id": 2
@@ -29,18 +29,11 @@
       "id": 4
     },
     {
-      "name": "Belma",
+      "name": "Cicko",
       "lastname": "Redzepovic",
-      "email": "belma.redzepovic@gmail.com",
-      "password": "YmVsbWExMjM=",
+      "email": "cickothecat@email.com",
+      "password": "Y2lja28xMjM0NQ==",
       "id": 5
-    },
-    {
-      "name": "Hamo",
-      "lastname": "Hamic",
-      "email": "hamo.hamicgmail.com",
-      "password": "aGFtbzk5OQ==",
-      "id": 6
     }
   ],
   "questions": [
@@ -53,41 +46,188 @@
       "message": "Are we happy?",
       "userId": 1,
       "id": 2
-    }
-  ],
-  "ratings": [
-    {
-      "rating": 5,
-      "questionId": 1,
-      "userId": 1
     },
     {
-      "rating": 4,
-      "questionId": 1,
-      "userId": 1
+      "message": "Are we sunrise?",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "message": "Are we hey?",
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "message": "Are we bay?",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "message": "Are we say?",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "message": "Are we okay?",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "message": "Are we happy?",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "message": "Are we blewy?",
+      "userId": 3,
+      "id": 9
+    },
+    {
+      "message": "Are we sunny?",
+      "userId": 3,
+      "id": 10
+    },
+    {
+      "message": "Are we kitty?",
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "message": "Are we blah?",
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "message": "Are you happy?",
+      "userId": 4,
+      "id": 13
+    },
+    {
+      "message": "Are we alone?",
+      "userId": 1,
+      "id": 14
+    },
+    {
+      "message": "Are we aliens?",
+      "userId": 5,
+      "id": 15
+    },
+    {
+      "message": "Are we happy that santa doesn't exist?",
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "message": "Are we sway?",
+      "userId": 1,
+      "id": 17
+    },
+    {
+      "message": "Are we quey?",
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "message": "Are we dante?",
+      "userId": 2,
+      "id": 19
+    },
+    {
+      "message": "Are we d bomb?",
+      "userId": 1,
+      "id": 20
+    },
+    {
+      "message": "Are we mop?",
+      "userId": 4,
+      "id": 21
+    },
+    {
+      "message": "Are we sklop?",
+      "userId": 1,
+      "id": 22
+    },
+    {
+      "message": "Are we sklop?",
+      "userId": 1,
+      "id": 23
+    },
+    {
+      "message": "Are we schwar?",
+      "userId": 1,
+      "id": 24
+    },
+    {
+      "message": "Are we kuglof?",
+      "userId": 1,
+      "id": 25
+    },
+    {
+      "message": "Are we brrrrrm?",
+      "userId": 1,
+      "id": 26
+    },
+    {
+      "message": "Are we alahimzile?",
+      "userId": 1,
+      "id": 27
+    },
+    {
+      "message": "Are we babuka?",
+      "userId": 1,
+      "id": 28
+    },
+    {
+      "message": "Are we belaj sad?",
+      "userId": 1,
+      "id": 29
     }
   ],
-  "likes": [
+  "questionInfo": [
     {
+      "rating": 5,
       "like": true,
       "questionId": 1,
       "userId": 1
     },
     {
-      "like": false,
-      "questionId": 2,
-      "userId": 1
+      "rating": 4,
+      "like": null,
+      "questionId": 1,
+      "userId": 2
     }
   ],
   "answers": [
     {
-      "answer": "No we are not!",
+      "message": "No we are not!",
       "questionId": 1,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "message": "Yes we are!",
+      "questionId": 1,
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "message": "Yes we are!",
+      "questionId": 2,
+      "userId": 1,
+      "id": 3
+    }
+  ],
+  "answerInfo": [
+    {
+      "rating": 2.5,
+      "like": true,
+      "answerId": 1,
       "userId": 1
     },
     {
-      "answer": "Yes we are!",
-      "questionId": 1,
+      "rating": 4.5,
+      "like": true,
+      "answerId": 1,
       "userId": 2
     }
   ]

@@ -1,8 +1,8 @@
 <div class="homepage">
+  <select name="homepage-select" id="homepage-select" (change)="getQuestions($event.target.value)">
+    <option *ngFor="let qt of questionTypes" [value]="qt">{{qt}}</option>
+  </select>
   <h3>Questions</h3>
-  <div *ngFor="let question of questions" class="homepage-questions">
-    <p>{{question.message}}</p>
-    <p>Userid: {{question.userId}}</p>
-    <a routerLink="/question/{{question.id}}">Id: {{question.id}}</a>
-  </div>
+  <app-list-questions [questions]="questionsObservable | async"></app-list-questions>
+  <button *ngIf="questions.length>=20" (click)="loadMore()">Load More</button>
 </div>

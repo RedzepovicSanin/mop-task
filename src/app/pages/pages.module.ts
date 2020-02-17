@@ -7,6 +7,7 @@ import { QuestionComponent } from './question/question.component';
 import { MyQuestionsComponent } from './my-questions/my-questions.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PagesComponent } from './pages.component';
+import { ListQuestionComponent } from './list-question/list-question.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { PagesComponent } from './pages.component';
     HomepageComponent,
     QuestionComponent,
     MyQuestionsComponent,
+    ListQuestionComponent,
     ProfileComponent
   ],
   imports: [

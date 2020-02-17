@@ -31,7 +31,7 @@ export class LoginPageComponent implements OnInit {
     const userForLogin = new User;
     userForLogin.email = this.email.value;
     userForLogin.password = btoa(this.password.value);
-    this.userService.GetUser(userForLogin).subscribe((response: User[]) => {
+    this.userService.CheckUser(userForLogin).subscribe((response: User[]) => {
       const returnedUser = response[0];
       if (returnedUser === undefined) {
         this.loginFailed = true;
