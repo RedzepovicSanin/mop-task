@@ -8,28 +8,19 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./list-question.component.scss']
 })
 export class ListQuestionComponent implements OnInit {
-  user: User;
+  currentUser: User;
   @Input() questions: Question[] = [];
   constructor() { }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('currentUser'));
-  }
-
-  // return rating for question
-  getRating(question: Question): number {
-    let rating = 0;
-    question.questionInfo.forEach(info => {
-      rating += info.rating;
-    });
-    return (rating === 0) ? rating : rating/question.questionInfo.length;
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   // return flag if user liked that question
-  thisUserLiked(question: Question): boolean {
+  thisUserLiked(question: Question): boolean | null {
     let liked = null;
     question.questionInfo.forEach(info => {
-      if (this.user.id === info.userId) {
+      if (this.currentUser.id === info.userId) {
         liked = info.like;
       }
     })

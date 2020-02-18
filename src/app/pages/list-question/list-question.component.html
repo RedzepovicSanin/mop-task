@@ -1,7 +1,6 @@
 <div *ngIf="questions" class= "list-questions">
   <div *ngFor="let question of questions" class="list-questions-widget">
-    <a routerLink="./question/{{question.id}}">{{question.message}}</a>
-    <p>Rating: {{getRating(question)}}</p>
+    <a routerLink="/pages/question/{{question.id}}">{{question.message}}</a>
     <p>Liked: {{thisUserLiked(question)}}</p>
     <h5 *ngIf="question.answers.length>0">Answers:</h5>
     <div *ngFor="let answer of question.answers" class="list-questions-widget-answers">

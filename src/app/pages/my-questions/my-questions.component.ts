@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { QuestionService } from 'src/app/shared/services/question.service';
 import { UserService } from 'src/app/shared/services/user.service';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   styleUrls: ['./my-questions.component.scss']
 })
 export class MyQuestionsComponent implements OnInit {
-  user: User;
+  currentUser: User;
   page = 1;
   private questionsSubject = new BehaviorSubject<Question[]>([]);
   questionsObservable = this.questionsSubject.asObservable();
@@ -23,8 +23,8 @@ export class MyQuestionsComponent implements OnInit {
               private toastrService: ToastrService) { }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('currentUser'));
-    this.questionService.GetUserQuestions(this.user.id, this.page).subscribe((response: Question[]) => {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.questionService.GetUserQuestions(this.currentUser.id, this.page).subscribe((response: Question[]) => {
       this.myQuestions = response;
       this.questionsSubject.next(this.myQuestions);
     }, () => {
@@ -34,9 +34,8 @@ export class MyQuestionsComponent implements OnInit {
 
   // load more questions
   loadMore() {
-    debugger;
     this.page += this.page;
-    this.questionService.GetUserQuestions(this.user.id, this.page).subscribe((response: Question[]) => {
+    this.questionService.GetUserQuestions(this.currentUser.id, this.page).subscribe((response: Question[]) => {
       this.myQuestions = this.myQuestions.concat(response);
       this.questionsSubject.next(this.myQuestions);
     }, () => {

@@ -1,1 +1,15 @@
-<p>questions works!</p>
+<div *ngIf="questionsObservable | async as question" class="question-widget">
+  <h6>{{question.message}}</h6>
+  <p>Liked: {{question.likedByUser}}</p>
+  <h5 *ngIf="question.answers && question.answers.length>0">Answers:</h5>
+  <div *ngFor="let answer of question.answers" class="question-widget-answers">
+    <p>{{answer.message}}</p>
+    <p>Liked: {{answer.likedByUser}}</p>
+    <div *ngIf="currentUser.id === answer.userId">
+      <!-- <a (click)="editAnswer(answer.id)">Edit</a>  if there is time --> 
+      <a (click)="deleteAnswer(answer.id)">Delete</a>
+    </div>
+  </div>
+  <textarea placeholder="Enter new answer..." name="message" [(ngModel)]="message"></textarea>
+  <button (click)="createAnswer(message, question)">Comment</button>
+</div>
