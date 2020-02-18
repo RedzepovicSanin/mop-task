@@ -19,6 +19,7 @@ export class LoginPageComponent implements OnInit {
               private router: Router, private toastrService: ToastrService) { }
 
   ngOnInit() {
+    this.authService.removeUserFromStorage();
     this.loginForm = new FormGroup({
       'email': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),
       'password': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),

@@ -1,6 +1,5 @@
 export class AnswerInfo {
-  rating: number;
-  like?: boolean;
+  like: boolean | null;
   answerId: number;
   userId: number;
 }

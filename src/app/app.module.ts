@@ -13,6 +13,8 @@ import { Page404Component } from './page404/page404.component';
 
 import { UserService } from './shared/services/user.service';
 import { AuthService } from './shared/services/auth.service';
+import { QuestionService } from './shared/services/question.service';
+import { AnswerService } from './shared/services/answer.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AuthService } from './shared/services/auth.service';
   ],
   providers: [
     UserService,
-    AuthService
+    AuthService,
+    QuestionService,
+    AnswerService
   ],
   bootstrap: [AppComponent]
 })

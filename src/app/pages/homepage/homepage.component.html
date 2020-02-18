@@ -1,8 +1,11 @@
 <div class="homepage">
-  <select name="homepage-select" id="homepage-select" (change)="getQuestions($event.target.value)">
-    <option *ngFor="let qt of questionTypes" [value]="qt">{{qt}}</option>
-  </select>
-  <h3>Questions</h3>
+  <textarea placeholder="Enter new question..." name="message" [(ngModel)]="message"></textarea>
+  <button (click)="createQuestion(message)">Comment</button>
+  <div class="homepage-nav">
+    <span class="homepage-nav-item" (click)="getLatestQuestions(false)">Latest questions</span>
+    <span class="homepage-nav-item" (click)="getMostViewedQuestions(false)">Most viewed questions</span>
+    <span class="homepage-nav-item" (click)="getHotQuestions(false)">Hot questions</span>
+  </div>
   <app-list-questions [questions]="questionsObservable | async"></app-list-questions>
-  <button *ngIf="questions.length>=20" (click)="loadMore()">Load More</button>
+  <button *ngIf="questions.length>=20 && currentFeed" (click)="loadMore(currentFeed)">Load More</button>
 </div>

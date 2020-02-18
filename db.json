@@ -181,20 +181,58 @@
       "message": "Are we belaj sad?",
       "userId": 1,
       "id": 29
+    },
+    {
+      "message": "Are we finally finished?",
+      "userId": 1,
+      "id": 30
+    },
+    {
+      "message": "Are we finally finished vol2?",
+      "userId": 1,
+      "id": 31
+    },
+    {
+      "message": "Are we finisheeeed?",
+      "userId": 1,
+      "id": 32
     }
   ],
   "questionInfo": [
     {
-      "rating": 5,
       "like": true,
       "questionId": 1,
       "userId": 1
     },
     {
-      "rating": 4,
-      "like": null,
+      "like": false,
       "questionId": 1,
       "userId": 2
+    },
+    {
+      "like": true,
+      "questionId": 2,
+      "userId": 1
+    },
+    {
+      "like": true,
+      "questionId": 2,
+      "userId": 2
+    },
+    {
+      "like": false,
+      "questionId": 2,
+      "userId": 3
+    },
+    {
+      "like": false,
+      "questionId": 3,
+      "userId": 1
+    },
+    {
+      "like": false,
+      "questionId": 4,
+      "userId": 1
     }
   ],
   "answers": [
@@ -215,18 +253,54 @@
       "questionId": 2,
       "userId": 1,
       "id": 3
+    },
+    {
+      "message": "No we are not!",
+      "questionId": 3,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "message": "Yes we are!",
+      "questionId": 3,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "message": "Yes we are!",
+      "questionId": 3,
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "message": "YEEEEES",
+      "questionId": 32,
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "message": "YEEEEEE",
+      "questionId": 32,
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "message": "Maybeeeee",
+      "questionId": 32,
+      "userId": 1,
+      "id": 9
     }
   ],
   "answerInfo": [
     {
-      "rating": 2.5,
       "like": true,
+      "questionId": 1,
       "answerId": 1,
       "userId": 1
     },
     {
-      "rating": 4.5,
       "like": true,
+      "questionId": 1,
       "answerId": 1,
       "userId": 2
     }
