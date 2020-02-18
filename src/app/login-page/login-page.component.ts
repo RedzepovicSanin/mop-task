@@ -39,7 +39,7 @@ export class LoginPageComponent implements OnInit {
       } else {
         if ((returnedUser.email === userForLogin.email) && (userForLogin.password === returnedUser.password)) {
           this.authService.insertUserToStorage(returnedUser);
-          this.router.navigate(['pages']);
+          this.router.navigate(['/pages/homepage']);
         } else {
           this.loginFailed = true;
         }

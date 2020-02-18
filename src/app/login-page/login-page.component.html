@@ -1,9 +1,9 @@
 <div class="login-page">
-  <h3>LOGIN PAGE</h3>
+  <p>Sign in</p>
   <form class="form login-page-form" [formGroup]="loginForm" (ngSubmit)="login()">
 
     <div class="login-page-input">
-      <label>Email:</label>
+      <label>E-MAIL ADDRESS</label>
       <input id="email" name="email" class="form-control" type="email" formControlName="email" [email]="true" required>
 
       <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger login-page-input-close">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="login-page-input">
-      <label>Password:</label>
+      <label>PASSWORD</label>
       <input id="password" name="password" class="form-control" type="password" formControlName="password" required>
 
       <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger login-page-input-close">
@@ -30,8 +30,8 @@
     </div>
 
     <div class="login-page-buttons">
-      <button class="btn btn-dark" type="submit">Login</button>
-      <button class="btn btn-dark" type="button" [routerLink]="['/register']">Register</button>
+      <button class="btn btn-primary" type="submit">Sign in</button>
+      <a [routerLink]="['/register']">Register</a>
     </div>
 
   </form>

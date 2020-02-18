@@ -1,9 +1,9 @@
 <div class="register-page">
-  <h3>REGISTER PAGE</h3>
+  <p>Create Your Account</p>
   <form class="form register-page-form" [formGroup]="registerForm" (ngSubmit)="register()">
 
     <div class="register-page-input">
-      <label>Name:</label>
+      <label>NAME</label>
       <input id="name" name="name" class="form-control" type="text" formControlName="name" required>
 
       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger register-page-input-close">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="register-page-input">
-      <label>Lastname:</label>
+      <label>LASTNAME</label>
       <input id="lastname" name="lastname" class="form-control" type="text" formControlName="lastname" required>
 
       <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger register-page-input-close">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="register-page-input">
-      <label>Email:</label>
+      <label>EMAIL</label>
       <input id="email" name="email" class="form-control" type="email" formControlName="email" [email]="true" required>
 
       <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger register-page-input-close">
@@ -42,20 +42,23 @@
     </div>
 
     <div class="register-page-input">
-      <label>Password:</label>
+      <label>PASSWORD</label>
       <input id="password" name="password" class="form-control" type="password" formControlName="password" required>
 
       <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger register-page-input-close">
         <div *ngIf="password.errors.required">
           Password is required.
         </div>
+        <div *ngIf="password.errors.minlength">
+          Password must be atleast 5 characters long.
+        </div>
         <div class="register-page-input-close-button" (click)="closeValidationInfo(password)">X</div>
       </div>
     </div>
 
     <div class="register-page-buttons">
-      <button class="btn btn-dark" type="submit" [disabled]="!registerForm.valid">Register</button>
-      <button class="btn btn-dark" type="button" [routerLink]="['/login']">Back to Login</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+      <a [routerLink]="['/login']">Back to Login</a>
     </div>
 
   </form>

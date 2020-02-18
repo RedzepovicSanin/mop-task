@@ -1,12 +1,52 @@
 .list-questions {
   .list-questions-widget {
-    margin: 10px;
-    padding: 4px;
-    a {
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+    border: solid 1px #eaedf3;
+    background-color: #ffffff;
+    .list-questions-widget-info {
       cursor: pointer;
+      padding: 4px;
+      p {
+        font-size: 14px;
+        line-height: 1.57;
+      }
+      p.list-questions-widget-info-user
+      {
+        font-weight: 500;
+        color: #3e3f42;
+      }
+      p.list-questions-widget-info-message {
+        font-weight: normal;
+        color: #6b6c6f;
+      }
     }
-    .list-questions-widget-answers {
-      margin-left: 10px;
+    .list-questions-widget-likes {
+      padding: 4px;
+      display: flex;
+      .list-questions-widget-likes-item {
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        flex: 1;
+        img {
+          font-size: 16px;
+          margin-right: 4px;
+        }
+      }
+      .list-questions-widget-likes-item:hover {
+        background-color: rgb(243, 243, 243);
+      }
+      .list-questions-widget-likes-item:last-child {
+        cursor: auto;
+        flex: 4;
+        text-align: right;
+      }
+      .list-questions-widget-likes-item:last-child:hover {
+        background-color: white;
+      }
     }
   }
 }

@@ -1,9 +1,24 @@
 .register-page {
-  margin: 150px auto;
-  width: 20%;
+  margin: 134px auto;
+  width: 350px;
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  p {
+    font-size: 22px;
+    line-height: 1.45;
+  }
   .register-page-form {
-    margin-top: 10px;
+    margin: 20px 0px;
     .register-page-input {
+      margin-bottom: 16px;
+      label {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #9ea0a5;
+      }
       width: 100%;
       .register-page-input-close {
         display: flex;
@@ -12,11 +27,24 @@
           cursor: pointer;
         }
       }
+      .alert {
+        padding: 6px 12px;
+        margin-top: 5px;
+      }
     }
     .register-page-buttons {
-      margin-top: 10px;
+      margin-top: 32px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      button {
+        width: 100%;
+      }
+      a {
+        margin-top: 24px;
+        text-align: center;
+        color: #008bff;
+        cursor: pointer;
+      }
     }
   }
 }

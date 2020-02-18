@@ -15,6 +15,7 @@ import { UserService } from './shared/services/user.service';
 import { AuthService } from './shared/services/auth.service';
 import { QuestionService } from './shared/services/question.service';
 import { AnswerService } from './shared/services/answer.service';
+import { QuestionInfoService } from './shared/services/questionInfo.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AnswerService } from './shared/services/answer.service';
     UserService,
     AuthService,
     QuestionService,
-    AnswerService
+    AnswerService,
+    QuestionInfoService
   ],
   bootstrap: [AppComponent]
 })

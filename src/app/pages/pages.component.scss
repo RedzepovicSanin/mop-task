@@ -1,10 +1,39 @@
 .pages {
+  width: 100%;
+  background-color: white;
   display: flex;
   justify-content: space-between;
+  padding: 16px 0px;
   .pages-nav {
-    p {
+    img {
+      margin-right: 36px;
+    }
+    .pages-routes {
       display: inline;
-      margin-right: 10px;
+      a {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #3e3f42;
+        text-decoration: none;
+        margin: 0px 12px;
+      }
+      a:hover {
+        font-weight: 900;
+      }
+    }
+    span {
+      font-size: 18px;
+      margin-right: 165px;
+      cursor: pointer;
     }
   }
+  .pages-nav:first-child {
+    margin-left: 165px;
+  }
+}
+
+.active-link {
+  font-weight: 900;
+  text-decoration: underline;
 }

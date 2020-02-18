@@ -1,11 +1,15 @@
 <div class="homepage">
-  <textarea placeholder="Enter new question..." name="message" [(ngModel)]="message"></textarea>
-  <button (click)="createQuestion(message)">Comment</button>
+  <h2>Welcome, {{currentUser.name}}</h2>
+  <p>Curious? Just ask.</p>
+  <div class="homepage-input">
+    <input placeholder="Ask a question..." name="message" [(ngModel)]="message">
+    <button class="btn btn-primary" (click)="createQuestion(message)">Post Question</button>
+  </div>
   <div class="homepage-nav">
-    <span class="homepage-nav-item" (click)="getLatestQuestions(false)">Latest questions</span>
-    <span class="homepage-nav-item" (click)="getMostViewedQuestions(false)">Most viewed questions</span>
-    <span class="homepage-nav-item" (click)="getHotQuestions(false)">Hot questions</span>
+    <span class="homepage-nav-item" (click)="getLatestQuestions(false)" [class.active-feed]="1===currentFeed">Most recent</span>
+    <span class="homepage-nav-item" (click)="getMostViewedQuestions(false)" [class.active-feed]="2===currentFeed">Most viewed</span>
+    <span class="homepage-nav-item" (click)="getHotQuestions(false)" [class.active-feed]="3===currentFeed">Hot</span>
   </div>
   <app-list-questions [questions]="questionsObservable | async"></app-list-questions>
-  <button *ngIf="questions.length>=20 && currentFeed" (click)="loadMore(currentFeed)">Load More</button>
+  <button class="btn btn-secondary" *ngIf="questions.length>=20 && currentFeed" (click)="loadMore(currentFeed)">Load More</button>
 </div>

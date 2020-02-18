@@ -22,12 +22,14 @@ export class RegisterPageComponent implements OnInit {
       'name': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),
       'lastname': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),
       'email': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),
-      'password': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),
+      'password': new FormControl('', { validators: [Validators.required, Validators.minLength(5)], updateOn: 'blur'}),
     });
     this.registerFailed = false;
   }
 
   register() {
+    const a = this.registerForm.valid;
+
     this.registerFailed = false;
     const userForInsert = new User;
     userForInsert.name = this.name.value;
