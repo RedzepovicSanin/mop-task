@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mop",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -48,11 +48,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              {
-                "glob": "_redirects",
-                "input": "src",
-                "output": "/"
-              }
+              "_redirects"
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
