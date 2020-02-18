@@ -28,10 +28,15 @@ export class HomepageComponent implements OnInit {
     this.getLatestQuestions(false);
   }
 
+  isActive(feed) {
+    this.currentFeed === feed ? true : false;
+  }
+
   createQuestion(message: string) {
     const newQuestion = new Question;
     newQuestion.message = message;
     newQuestion.userId = this.currentUser.id;
+    newQuestion.user = this.currentUser.name + ' ' + this.currentUser.lastname;
     this.questionService.InsertQuestion(newQuestion).subscribe((response: Question) => {
       this.toastrService.success('Added new question!', 'Success');
       this.getLatestQuestions(false);

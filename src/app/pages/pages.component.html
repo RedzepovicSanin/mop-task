@@ -1,12 +1,18 @@
 <div class="pages">
   <div class="pages-nav">
-    <a [routerLink]="['/pages/homepage']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Homepage</a>
-    <a [routerLink]="['/pages/myquestions']" routerLinkActive="router-link">My Questions</a>
-    <a [routerLink]="['/pages/profile']" routerLinkActive="router-link">Profile</a>
+    <img src="assets/logo.svg" alt="no logo">
+    <div class="pages-routes" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['homepage']">Home</a>
+    </div>
+    <div class="pages-routes" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['myquestions']">My Questions</a>
+    </div>
+    <div class="pages-routes" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['profile']">My Profile</a>
+    </div>
   </div>
   <div class="pages-nav">
-    <p>Hello, {{currentUser.name}} {{currentUser.lastname}}</p>
-    <button (click)="logout()">Log Out</button>
+    <span (click)="logout()">Sign Out</span>
   </div>
 </div>
 <router-outlet></router-outlet>

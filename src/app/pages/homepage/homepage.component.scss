@@ -1,8 +1,48 @@
 .homepage {
-  .homepage-nav {
-    .homepage-nav-item {
-      cursor: pointer;
+  margin: 70px auto;
+  width: 540px;
+  p {
+    font-size: 22px;
+    line-height: 1.45;
+    color: #6b6c6f;
+  }
+  .homepage-input {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+    border: solid 1px #eaedf3;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    input {
+      border: none;
+      height: 75px;
       padding: 4px;
     }
+    button {
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
+  .homepage-nav {
+    margin-bottom: 30px;
+    .active-feed {
+      font-weight: 500;
+      border-bottom: 3px solid #008bff;
+      padding-bottom: 2px;
+      color: #3e3f42;
+    }
+    .homepage-nav-item {
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #6b6c6f;
+      margin-right: 30px;
+    }
+  }
+  button {
+    display: block;
+    margin: 16px auto;
+    padding: 8px 16px;
   }
 }

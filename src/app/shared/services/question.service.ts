@@ -28,7 +28,7 @@ export class QuestionService {
   // paginated questions for one user
   GetUserQuestions(userId, page) {
     return this.http.get(environment.baseAddress + 'questions?userId=' + userId + 
-      '&_embed=answers&_embed=questionInfo&_sort=id&_order=desc&_page=' + page + '&_limit=20');
+      '&_embed=questionInfo&_sort=id&_order=desc&_page=' + page + '&_limit=20');
   }
 
 }

@@ -1,24 +1,51 @@
-.profile {
-  margin-top: 40px;
-  width: 20%;
-  .profile-form {
-    margin: 20px;
-    .profile-input {
-      width: 100%;
-      .profile-input-close {
-        display: flex;
-        justify-content: space-between;
-        .profile-input-close-button {
-          cursor: pointer;
+.container-profile {
+  width: 800px;
+  margin: 134px auto 50px;
+  display: flex;
+  justify-content: space-between;
+  .profile {
+    display: inline-block;
+    width: 350px;
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    p {
+      font-size: 22px;
+      line-height: 1.45;
+    }
+    .profile-form {
+      margin: 20px 0px;
+      .profile-input {
+        margin-bottom: 16px;
+        label {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 1.5;
+          color: #9ea0a5;
+        }
+        width: 100%;
+        .profile-input-close {
+          display: flex;
+          justify-content: space-between;
+          .profile-input-close-button {
+            cursor: pointer;
+          }
         }
       }
-    }
-    .profile-buttons {
-      margin-top: 10px;
-      display: flex;
-      justify-content: space-between;
-      button {
-        width: 100%;
+      .profile-buttons {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        button {
+          width: 100%;
+        }
+        a {
+          margin-top: 24px;
+          text-align: center;
+          color: #008bff;
+          cursor: pointer;
+        }
       }
     }
   }

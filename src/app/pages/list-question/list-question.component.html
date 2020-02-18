@@ -1,10 +1,18 @@
 <div *ngIf="questions" class= "list-questions">
   <div *ngFor="let question of questions" class="list-questions-widget">
-    <a routerLink="/pages/question/{{question.id}}">{{question.message}}</a>
-    <p>Liked: {{thisUserLiked(question)}}</p>
-    <h5 *ngIf="question.answers.length>0">Answers:</h5>
-    <div *ngFor="let answer of question.answers" class="list-questions-widget-answers">
-      <p>{{answer.message}}</p>
+    <div class="list-questions-widget-info" routerLink="/pages/question/{{question.id}}">
+      <p class="list-questions-widget-info-user">{{question.user}}</p>
+      <p class="list-questions-widget-info-message">{{question.message}}</p>
+    </div>
+    <hr>
+    <div class="list-questions-widget-likes">
+      <span class="list-questions-widget-likes-item" (click)="updateQuestionsInfo(question, 'liked')">
+        <img src="assets/love-up{{thisUserLikedQuestion(question)}}.svg" alt="like">Like
+      </span>
+      <span class="list-questions-widget-likes-item" (click)="updateQuestionsInfo(question, 'disliked')">
+        <img src="assets/love-down{{thisUserDislikedQuestion(question)}}.svg" alt="dislike">Dislike
+      </span>
+      <span class="list-questions-widget-likes-item" [style.color]="setRatingColor(getRating(question))">{{getRating(question)}}</span>
     </div>
   </div>
 </div>

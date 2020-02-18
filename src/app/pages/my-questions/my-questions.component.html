@@ -1,5 +1,5 @@
 <div class="my-questions">
-  <h3>My Questions</h3>
+  <h4>My Questions</h4>
   <app-list-questions [questions]="questionsObservable | async"></app-list-questions>
-  <button *ngIf="myQuestions && myQuestions.length>=20" (click)="loadMore()">Load More</button>
+  <button class="btn btn-secondary" *ngIf="myQuestions && myQuestions.length>=20" (click)="loadMore()">Load More</button>
 </div>

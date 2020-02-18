@@ -5,6 +5,7 @@ import { AnswerInfo } from './answers-info';
 export class Question {
   message: string;
   userId: number;
+  user: string;
   id: number;
   likedByUser: boolean | null;
   answers: Answer[];
