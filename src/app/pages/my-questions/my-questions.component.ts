@@ -31,7 +31,6 @@ export class MyQuestionsComponent implements OnInit {
       this.toastrService.error('Something bad happened!', 'Error');
     });
   }
-
   // load more questions
   loadMore() {
     this.page += this.page;

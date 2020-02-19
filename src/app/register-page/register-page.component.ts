@@ -26,7 +26,7 @@ export class RegisterPageComponent implements OnInit {
     });
     this.registerFailed = false;
   }
-
+  // register method for user
   register() {
     const a = this.registerForm.valid;
 
@@ -43,12 +43,12 @@ export class RegisterPageComponent implements OnInit {
       this.toastrService.error('Registration not successful!', 'Error');
     });
   }
-
+  // reset validation after exiting validation window
   closeValidationInfo(inputValidation: AbstractControl) {
     inputValidation.markAsUntouched();
     inputValidation.markAsPristine();
   }
-
+  // getters
   get name() { return this.registerForm.get('name') }
   get lastname() { return this.registerForm.get('lastname') }
   get email() { return this.registerForm.get('email') }

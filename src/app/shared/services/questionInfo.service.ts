@@ -10,16 +10,16 @@ export class QuestionInfoService {
 
   constructor(private http: HttpClient) { }
 
-  // insert new question
+  // insert new question info
   InsertQuestionInfo(questionInfo: QuestionInfo) {
     return this.http.post(environment.baseAddress + 'questionInfo', questionInfo);
   }
-  // paginated and sorted specific questions for feed
+  // update question info
   UpdateQuestionInfo(questionInfo: QuestionInfo) {
     return this.http.put(environment.baseAddress + 'questionInfo/' + questionInfo.id, questionInfo);
   }
 
-  // paginated questions for one user
+  // delete question info
   DeleteQuestioninfo(questionId: number) {
     return this.http.delete(environment.baseAddress + 'questionInfo/' + questionId);
   }

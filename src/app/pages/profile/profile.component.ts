@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
       'repeatNewPassword': new FormControl('')
     });
   }
-  
+  // updating profile method
   update() {
     const updateUser = new User;
     updateUser.name = this.name.value;
@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
       this.toastrService.error('Profile not updated!', 'Error');
     })
   }
-
+  // updating password method
   updatePassword() {
     if (this.currentUser.password !== btoa(this.oldPassword.value)) {
       this.toastrService.info('Old password wrong!', 'Info');
@@ -67,17 +67,18 @@ export class ProfileComponent implements OnInit {
       }
     }
   }
-
+  // update current user in local storage
   updateLocalUser(updateUser) {
     const userForUpdate = JSON.stringify(updateUser);
     localStorage.removeItem('currentUser');
     localStorage.setItem('currentUser', userForUpdate);
   }
+  // reset validation after exiting validation window
   closeValidationInfo(inputValidation: AbstractControl) {
     inputValidation.markAsUntouched();
     inputValidation.markAsPristine();
   }
-
+  // getters
   get name() { return this.profileForm.get('name') }
   get lastname() { return this.profileForm.get('lastname') }
   get email() { return this.profileForm.get('email') }

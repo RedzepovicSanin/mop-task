@@ -18,7 +18,7 @@ export class ListQuestionComponent implements OnInit {
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
-
+  // setting color for rating
   setRatingColor(rating: number): string {
     if (rating = 0) {
       return 'grey';
@@ -28,7 +28,7 @@ export class ListQuestionComponent implements OnInit {
       return 'red';
     }
   }
-
+  // getting rating for question
   getRating(question: Question): number {
     let rating = 0;
     question.questionInfo.forEach(qI => {
@@ -40,7 +40,7 @@ export class ListQuestionComponent implements OnInit {
     return rating;
   }
 
-  // return flag if user liked that question
+  // return color for img
   thisUserLikedQuestion(question: Question): string {
     const liked = this.thisUserLiked(question);
     if (liked == null) {
@@ -49,7 +49,7 @@ export class ListQuestionComponent implements OnInit {
       return '-green';
     }
   }
-
+  // return color for img
   thisUserDislikedQuestion(question: Question): string {
     const liked = this.thisUserLiked(question);
     if (liked == null) {
@@ -58,7 +58,7 @@ export class ListQuestionComponent implements OnInit {
       return '-red';
     }
   }
-
+  // updating QI after like/dislike
   updateQuestionsInfo(question: Question, rating: string) {
     const liked = this.thisUserLiked(question);
     let questionInfo: QuestionInfo;
@@ -95,7 +95,7 @@ export class ListQuestionComponent implements OnInit {
       }
     }
   }
-
+  // is this user liked question method
   thisUserLiked(question: Question): boolean | null {
     let liked = null;
     question.questionInfo.forEach(info => {
@@ -105,7 +105,7 @@ export class ListQuestionComponent implements OnInit {
     })
     return liked;
   }
-
+  // setting QI for REST
   setQuestionInfo(question, userId, liked, questionInfo): QuestionInfo {
     const newQuestionInfo = new QuestionInfo;
     if (questionInfo)

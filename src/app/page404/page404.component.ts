@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 export class Page404Component {
 
   constructor(private location: Location) { }
-
+  // returning to previous page
   returnToPreviousPage() {
     this.location.back();
   }

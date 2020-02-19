@@ -272,48 +272,56 @@
     {
       "message": "No we are not!",
       "questionId": 1,
+      "user": "Sanin Redzepovic",
       "userId": 1,
       "id": 1
     },
     {
       "message": "Yes we are!",
       "questionId": 1,
+      "user": "Alen Ausic",
       "userId": 2,
       "id": 2
     },
     {
       "message": "No we are not!",
       "questionId": 3,
+      "user": "Sanin Redzepovic",
       "userId": 1,
       "id": 4
     },
     {
       "message": "Yes we are!",
       "questionId": 3,
+      "user": "Alen Ausic",
       "userId": 2,
       "id": 5
     },
     {
       "message": "Yes we are!",
       "questionId": 3,
+      "user": "Lamija Haracic",
       "userId": 3,
       "id": 6
     },
     {
       "message": "YEEEEES",
       "questionId": 32,
+      "user": "Sanin Redzepovic",
       "userId": 1,
       "id": 7
     },
     {
       "message": "YEEEEEE",
       "questionId": 32,
+      "user": "Sanin Redzepovic",
       "userId": 1,
       "id": 8
     },
     {
       "message": "Maybeeeee",
       "questionId": 32,
+      "user": "Sanin Redzepovic",
       "userId": 1,
       "id": 9
     }
@@ -323,13 +331,29 @@
       "like": true,
       "questionId": 1,
       "answerId": 1,
-      "userId": 1
+      "userId": 1,
+      "id": 1
     },
     {
       "like": true,
       "questionId": 1,
       "answerId": 1,
-      "userId": 2
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "answerId": 4,
+      "questionId": 3,
+      "like": false
+    },
+    {
+      "userId": 1,
+      "answerId": 5,
+      "questionId": 3,
+      "like": true,
+      "id": 4
     }
   ]
 }

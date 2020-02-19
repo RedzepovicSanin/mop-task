@@ -14,11 +14,7 @@ export class AnswerService {
   InsertAnswer(answer: Answer) {
     return this.http.post(environment.baseAddress + 'answers', answer);
   }
-  // put answer
-  EditAnswer(answerId, answer: Answer) {
-    return this.http.put(environment.baseAddress + 'answers/' + answerId, answer);
-  }
-
+  
   // delete answer
   DeleteAnswer(answerId) {
     return this.http.delete(environment.baseAddress + 'answers/' + answerId);
