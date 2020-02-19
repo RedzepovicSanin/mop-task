@@ -1,4 +1,4 @@
 export const environment = {
-  baseAddress: 'https://mop-task.herokuapp.com/db/',
+  baseAddress: 'https://mop-task.herokuapp.com/',
   production: true
 };
