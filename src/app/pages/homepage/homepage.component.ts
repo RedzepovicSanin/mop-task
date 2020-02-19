@@ -27,11 +27,11 @@ export class HomepageComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.getLatestQuestions(false);
   }
-
+  // checking active route
   isActive(feed) {
     this.currentFeed === feed ? true : false;
   }
-
+  // insert question method
   createQuestion(message: string) {
     const newQuestion = new Question;
     newQuestion.message = message;
@@ -45,7 +45,7 @@ export class HomepageComponent implements OnInit {
       this.toastrService.error('Something went bad!', 'Error');
     })
   }
-
+  // getting most recent questions
   getLatestQuestions(isLoadMoreFunc: boolean, page = 1) {
     if (!isLoadMoreFunc)
       this.questions = [];
@@ -58,7 +58,7 @@ export class HomepageComponent implements OnInit {
       this.toastrService.error('Something bad happened!', 'Error');
     });
   }
-
+  // getting most viewed questions
   getMostViewedQuestions(isLoadMoreFunc: boolean, page = 1) {
     if (!isLoadMoreFunc)
       this.questions = [];
@@ -71,7 +71,7 @@ export class HomepageComponent implements OnInit {
       this.toastrService.error('Something bad happened!', 'Error');
     });
   }
-
+  // getting hot questions
   getHotQuestions(isLoadMoreFunc: boolean, page = 1) {
     if (!isLoadMoreFunc)
       this.questions = [];

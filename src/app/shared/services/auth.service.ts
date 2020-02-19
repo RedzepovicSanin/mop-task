@@ -8,12 +8,12 @@ import { User } from '../models/user';
 export class AuthService {
 
   constructor() {}
-
+  // insert to local storage
   insertUserToStorage(user: User) {
     const userForInsert = JSON.stringify(user);
     localStorage.setItem('currentUser', userForInsert);
   }
-
+  // remove from local storage
   removeUserFromStorage() {
     localStorage.removeItem('currentUser');
   }

@@ -1,15 +1,44 @@
-<div *ngIf="questionsObservable | async as question" class="question-widget">
-  <h6>{{question.message}}</h6>
-  <p>Liked: {{question.likedByUser}}</p>
-  <h5 *ngIf="question.answers && question.answers.length>0">Answers:</h5>
-  <div *ngFor="let answer of question.answers" class="question-widget-answers">
-    <p>{{answer.message}}</p>
-    <p>Liked: {{answer.likedByUser}}</p>
-    <div *ngIf="currentUser.id === answer.userId">
-      <!-- <a (click)="editAnswer(answer.id)">Edit</a>  if there is time --> 
-      <a (click)="deleteAnswer(answer.id)">Delete</a>
+<div *ngIf="question" class="question">
+  <div *ngIf="questionsObservable | async as question" class="question-widget">
+    <div class="question-widget-info">
+      <p class="question-widget-info-user">{{question.user}}</p>
+      <p class="question-widget-info-message">{{question.message}}</p>
+    </div>
+    <hr>
+    <div class="question-widget-likes">
+      <span class="question-widget-likes-item" (click)="updateQuestionsInfo(question, 'liked')">
+        <img src="assets/love-up{{thisUserLikedQuestion(question)}}.svg" alt="like">Like
+      </span>
+      <span class="question-widget-likes-item" (click)="updateQuestionsInfo(question, 'disliked')">
+        <img src="assets/love-down{{thisUserDislikedQuestion(question)}}.svg" alt="dislike">Dislike
+      </span>
+      <span class="question-widget-likes-item" [style.color]="setRatingColor(getRating(question))">{{getRating(question)}}</span>
+    </div>
+    <p class="question-comment-section">Comments</p>
+    <div class="question-input">
+      <input placeholder="Write a comment..." name="message" [(ngModel)]="message">
+      <p (click)="createAnswer(message, question)">Post Comment</p>
+    </div>
+    <div *ngFor="let answer of question.answers" class="question-widget-answer">
+      <div *ngIf="(answer | json) != '{}'">
+        <div class="question-widget-answer-info">
+          <div class="question-widget-answer-info-answer">
+            <p class="question-widget-answer-info-answer-user">{{answer.user}}</p>
+            <p class="question-widget-answer-info-answer-delete" *ngIf="currentUser.id === answer.userId" (click)="deleteAnswer(answer.id)">Delete</p>
+          </div>
+          <p class="question-widget-answer-info-message">{{answer.message}}</p>
+        </div>
+        <hr>
+        <div class="question-widget-answer-likes">
+          <span class="question-widget-answer-likes-item" (click)="updateAnswersInfo(answer, 'liked')">
+            <img src="assets/love-up{{thisUserLikedAnswer(answer)}}.svg" alt="like">Like
+          </span>
+          <span class="question-widget-answer-likes-item" (click)="updateAnswersInfo(answer, 'disliked')">
+            <img src="assets/love-down{{thisUserDislikedAnswer(answer)}}.svg" alt="dislike">Dislike
+          </span>
+          <span class="question-widget-answer-likes-item" [style.color]="setRatingColor(getRatingA(answer))">{{getRatingA(answer)}}</span>
+        </div>
+      </div>
     </div>
   </div>
-  <textarea placeholder="Enter new answer..." name="message" [(ngModel)]="message"></textarea>
-  <button (click)="createAnswer(message, question)">Comment</button>
 </div>

@@ -26,7 +26,7 @@ export class LoginPageComponent implements OnInit {
     });
     this.loginFailed = false;
   }
-
+  // login method
   login() {
     this.loginFailed = false;
     const userForLogin = new User;
@@ -49,12 +49,12 @@ export class LoginPageComponent implements OnInit {
       this.loginFailed = true;
     });
   }
-
+  // reset validation after exiting validation window
   closeValidationInfo(inputValidation: AbstractControl) {
     inputValidation.markAsUntouched();
     inputValidation.markAsPristine();
   }
-
+  // getters
   get email() { return this.loginForm.get('email') }
   get password() { return this.loginForm.get('password') }
 }
