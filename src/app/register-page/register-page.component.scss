@@ -47,4 +47,11 @@
       }
     }
   }
+  .register-page-invalid {
+    display: flex;
+    justify-content: space-between;
+    .register-page-invalid-button {
+      cursor: pointer;
+    }
+  }
 }

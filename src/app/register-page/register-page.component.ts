@@ -19,34 +19,40 @@ export class RegisterPageComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = new FormGroup({
-      'name': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),
-      'lastname': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),
-      'email': new FormControl('', { validators: [Validators.required], updateOn: 'blur'}),
+      'name': new FormControl('', { validators: [Validators.required]}),
+      'lastname': new FormControl('', { validators: [Validators.required]}),
+      'email': new FormControl('', { validators: [Validators.required]}),
       'password': new FormControl('', { validators: [Validators.required, Validators.minLength(5)], updateOn: 'blur'}),
     });
     this.registerFailed = false;
   }
   // register method for user
   register() {
-    const a = this.registerForm.valid;
-
     this.registerFailed = false;
-    const userForInsert = new User;
-    userForInsert.name = this.name.value;
-    userForInsert.lastname = this.lastname.value;
-    userForInsert.email = this.email.value;
-    userForInsert.password = btoa(this.password.value);
-    this.userService.InsertUser(userForInsert).subscribe(() => {
-      this.toastrService.success('Registration successful!', 'Success');
-      this.router.navigate(['/login']);
-    }, () => {
-      this.toastrService.error('Registration not successful!', 'Error');
-    });
+    if (!this.registerForm.valid) {
+      this.registerFailed = true;
+    } else {
+      const userForInsert = new User;
+      userForInsert.name = this.name.value;
+      userForInsert.lastname = this.lastname.value;
+      userForInsert.email = this.email.value;
+      userForInsert.password = btoa(this.password.value);
+      this.userService.InsertUser(userForInsert).subscribe(() => {
+        this.toastrService.success('Registration successful!', 'Success');
+        this.router.navigate(['/login']);
+      }, () => {
+        this.toastrService.error('Registration not successful!', 'Error');
+      });
+    }
   }
   // reset validation after exiting validation window
   closeValidationInfo(inputValidation: AbstractControl) {
     inputValidation.markAsUntouched();
     inputValidation.markAsPristine();
+  }
+  // reset div
+  reset() {
+    this.registerFailed = false;
   }
   // getters
   get name() { return this.registerForm.get('name') }

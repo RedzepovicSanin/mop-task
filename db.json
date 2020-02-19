@@ -34,6 +34,20 @@
       "email": "cickothecat@email.com",
       "password": "Y2lja28xMjM0NQ==",
       "id": 5
+    },
+    {
+      "name": "",
+      "lastname": "",
+      "email": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "Samir",
+      "lastname": "Redzepovic",
+      "email": "samir@gmail.com",
+      "password": "MTIzNDU=",
+      "id": 7
     }
   ],
   "questions": [
