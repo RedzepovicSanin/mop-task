@@ -43,4 +43,11 @@
       }
     }
   }
+  .login-page-invalid {
+    display: flex;
+    justify-content: space-between;
+    .login-page-invalid-button {
+      cursor: pointer;
+    }
+  }
 }

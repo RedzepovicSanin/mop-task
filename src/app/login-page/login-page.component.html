@@ -36,8 +36,9 @@
 
   </form>
 
-  <div *ngIf="loginFailed" class="alert alert-danger">
-    Email or password invalid!
+  <div *ngIf="loginFailed" class="alert alert-danger login-page-invalid">
+    <div>Email or password invalid!</div>
+    <div class="login-page-invalid-button" (click)="reset()">X</div>
   </div>
 
 </div>

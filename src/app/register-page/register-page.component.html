@@ -57,14 +57,15 @@
     </div>
 
     <div class="register-page-buttons">
-      <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+      <button class="btn btn-primary" type="submit">Register</button>
       <a [routerLink]="['/login']">Back to Login</a>
     </div>
 
   </form>
 
-  <div *ngIf="registerFailed">
-    Email or password invalid!
+  <div *ngIf="registerFailed" class="alert alert-danger register-page-invalid">
+    <div>Enter all informations!</div>
+    <div class="register-page-invalid-button" (click)="reset()">X</div>
   </div>
 
 </div>
